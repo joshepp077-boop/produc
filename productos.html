@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo Profesional - Limpieza, Sanitarios y Oficina</title>
+<style>
+  body { font-family: Arial, sans-serif; margin:0; background:#f4f7fa; color:#333;}
+  header { background: linear-gradient(90deg,#006699,#004466); color:white; text-align:center; padding:20px;}
+  header h1 { margin:0; font-size:2.5em;}
+  nav { background:#004466; text-align:center; padding:10px;}
+  nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
+  nav a:hover { text-decoration:underline;}
+  .hero { position:relative; background:url('https://i.ibb.co/XZV2yGJ/limpieza-banner.jpg') center/cover no-repeat; height:300px; display:flex; justify-content:center; align-items:center; color:white;}
+  .hero h1 { background:rgba(0,0,0,0.5); padding:20px; border-radius:10px; font-size:2em; animation:fadein 2s;}
+  @keyframes fadein { from {opacity:0;} to {opacity:1;} }
+  section { padding:40px 20px; max-width:1200px; margin:auto;}
+  h2 { text-align:center; color:#004466; margin-bottom:30px;}
+  .productos { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:20px; }
+  .producto { background:white; border-radius:10px; padding:20px; text-align:center; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
+  .producto:hover { transform:translateY(-5px); }
+  .producto img { width:100%; height:150px; object-fit:cover; border-radius:10px; }
+  .producto h3 { margin:10px 0; color:#006699; }
+  .producto p { font-size:0.9em; color:#555; }
+  .precio { font-weight:bold; color:#008000; margin:10px 0; }
+  button { background:#006699; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer; }
+  button:hover { background:#004466; }
+  #qr { text-align:center; margin:40px 0; }
+  footer { background:#004466; color:white; text-align:center; padding:20px; margin-top:30px; }
+  @media(max-width:768px){ .productos { grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Catálogo Profesional</h1>
+  <p>Limpieza, Sanitarios y Oficina</p>
+</header>
+
+<nav>
+  <a href="#limpieza">Limpieza</a>
+  <a href="#sanitarios">Sanitarios</a>
+  <a href="#oficina">Oficina</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<div class="hero">
+  <h1>Productos de Calidad al Mejor Precio</h1>
+</div>
+
+<section id="limpieza">
+  <h2>Productos de Limpieza</h2>
+  <div class="productos">
+    <div class="producto">
+      <img src="https://i.ibb.co/0VdzcVF/detergente.jpg" alt="Detergente">
+      <h3>Detergente Multiusos</h3>
+      <p>Elimina grasa y manchas difíciles.</p>
+      <div class="precio">$50 MXN</div>
+      <button onclick="agregarCarrito('Detergente Multiusos')">Agregar al Carrito</button>
+    </div>
+    <div class="producto">
+      <img src="https://i.ibb.co/NxQ1QMY/cloro.jpg" alt="Cloro">
+      <h3>Cloro Desinfectante</h3>
+      <p>Ideal para pisos, baños y cocina.</p>
+      <div class="precio">$35 MXN</div>
+      <button onclick="agregarCarrito('Cloro Desinfectante')">Agregar al Carrito</button>
+    </div>
+    <div class="producto">
+      <img src="https://i.ibb.co/g6xS1qP/trapeador.jpg" alt="Trapeador">
+      <h3>Trapeador Profesional</h3>
+      <p>Con cabezal absorbente y mango ajustable.</p>
+      <div class="precio">$120 MXN</div>
+      <button onclick="agregarCarrito('Trapeador Profesional')">Agregar al Carrito</button>
+    </div>
+  </div>
+</section>
+
+<section id="sanitarios">
+  <h2>Productos Sanitarios</h2>
+  <div class="productos">
+    <div class="producto">
+      <img src="https://i.ibb.co/vqhy6Yt/jabon-manos.jpg" alt="Jabón de manos">
+      <h3>Jabón Líquido</h3>
+      <p>Protección antibacterial con aroma fresco.</p>
+      <div class="precio">$45 MXN</div>
+      <button onclick="agregarCarrito('Jabón Líquido')">Agregar al Carrito</button>
+    </div>
+    <div class="producto">
+      <img src="https://i.ibb.co/6HDXMkq/papel-higienico.jpg" alt="Papel Higiénico">
+      <h3>Papel Higiénico Premium</h3>
+      <p>Suavidad y resistencia en cada hoja.</p>
+      <div class="precio">$80 MXN (paquete)</div>
+      <button onclick="agregarCarrito('Papel Higiénico Premium')">Agregar al Carrito</button>
+    </div>
+    <div class="producto">
+      <img src="https://i.ibb.co/8MNKr08/toallas.jpg" alt="Toallas Sanitarias">
+      <h3>Toallas Sanitarias</h3>
+      <p>Máxima absorción y frescura garantizada.</p>
+      <div class="precio">$60 MXN</div>
+      <button onclick="agregarCarrito('Toallas Sanitarias')">Agregar al Carrito</button>
+    </div>
+  </div>
+</section>
+
+<section id="oficina">
+  <h2>Productos de Oficina</h2>
+  <div class="productos">
+    <div class="producto">
+      <img src="https://i.ibb.co/nDngZ0m/hojas.jpg" alt="Hojas blancas">
+      <h3>Hojas de Papel</h3>
+      <p>Caja de 500 hojas tamaño carta.</p>
+      <div class="precio">$120 MXN</div>
+      <button onclick="agregarCarrito('Hojas de Papel')">Agregar al Carrito</button>
+    </div>
+    <div class="producto">
+      <img src="https://i.ibb.co/tXZ8vJt/plumas.jpg" alt="Plumas">
+      <h3>Plumas de Gel</h3>
+      <p>Paquete con 12 plumas de colores variados.</p>
+      <div class="precio">$85 MXN</div>
+      <button onclick="agregarCarrito('Plumas de Gel')">Agregar al Carrito</button>
+    </div>
+    <div class="producto">
+      <img src="https://i.ibb.co/6H7jHhR/carpetas.jpg" alt="Carpetas">
+      <h3>Carpetas Organizadoras</h3>
+      <p>Paquete con 5 carpetas de colores.</p>
+      <div class="precio">$90 MXN</div>
+      <button onclick="agregarCarrito('Carpetas Organizadoras')">Agregar al Carrito</button>
+    </div>
+  </div>
+</section>
+
+<section id="qr">
+  <h2>Escanea este QR para visitar nuestro catálogo</h2>
+  <img src="https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=https://tusitio.com/catalogo.html&choe=UTF-8" alt="Código QR del catálogo">
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p style="text-align:center;">¿Deseas más información o hacer un pedido especial? Escríbenos:</p>
+  <p style="text-align:center;"><b>Email:</b> ventas@productoslimpieza.com</p>
+  <p style="text-align:center;"><b>Teléfono:</b> +52 55 1234 5678</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Catálogo Profesional. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+function agregarCarrito(producto){
+  alert(producto + " se ha agregado al carrito.");
+}
+</script>
+
+</body>
+</html>
